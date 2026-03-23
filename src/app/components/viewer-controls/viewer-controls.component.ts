@@ -14,6 +14,7 @@ import { Component, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ViewerStateService } from '../../services/viewer-state.service';
 import { AtomRendererService } from '../../renderer/atom-renderer.service';
+import { VisualizationMode } from '../../models/viewer-state.model';
 
 @Component({
   selector: 'app-viewer-controls',
@@ -26,9 +27,10 @@ import { AtomRendererService } from '../../renderer/atom-renderer.service';
       <button class="ctrl-btn" (click)="resetCamera()" aria-label="Reset camera">
         ⟳ Reset Camera
       </button>
-      <button class="ctrl-btn mode-btn" (click)="toggleMode()" [attr.aria-label]="mode() === 'bohr' ? 'Switch to Quantum' : 'Switch to Bohr'">
-        {{ mode() === 'bohr' ? '⚛ Bohr' : '☁ Quantum' }}
-      </button>
+      <div class="seg-control" aria-label="Visualization mode">
+        <button class="seg-btn" [class.active]="mode() === 'bohr'" (click)="setMode('bohr')">⚛ Bohr</button>
+        <button class="seg-btn" disabled aria-label="Quantum (coming soon)">☁ Quantum</button>
+      </div>
     </div>
   `,
   styles: [`
@@ -65,9 +67,43 @@ import { AtomRendererService } from '../../renderer/atom-renderer.service';
       background: #3d444d;
     }
 
-    .mode-btn {
+    .seg-control {
+      display: flex;
       margin-left: auto;
-      border-color: #388bfd44;
+      border: 1px solid #30363d;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .seg-btn {
+      background: #21262d;
+      color: #e6edf3;
+      border: none;
+      border-left: 1px solid #30363d;
+      padding: 5px 14px;
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+
+    .seg-btn:first-child {
+      border-left: none;
+    }
+
+    .seg-btn.active {
+      background: #1c2840;
+      color: #58a6ff;
+      font-weight: 600;
+    }
+
+    .seg-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .seg-btn:not(:disabled):hover {
+      background: #30363d;
     }
   `],
 })
@@ -86,7 +122,7 @@ export class ViewerControlsComponent {
     this.atomRenderer.resetCamera();
   }
 
-  toggleMode(): void {
-    this.viewerState.setMode(this.mode() === 'bohr' ? 'quantum' : 'bohr');
+  setMode(m: VisualizationMode): void {
+    this.viewerState.setMode(m);
   }
 }

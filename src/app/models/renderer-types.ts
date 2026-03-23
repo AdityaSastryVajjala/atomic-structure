@@ -30,12 +30,6 @@ export interface ShellGeometryParams {
   angularVelocity: number;
 
   /**
-   * Torus ring tilt in radians for shell ring visual differentiation.
-   * tilt(i) = Math.PI / 3 + (i * Math.PI / 20)
-   */
-  ringTilt: number;
-
-  /**
    * Color for this shell's ring and Bohr electrons, from the fixed 7-color palette.
    * Represented as a hex string, e.g., '#4fc3f7'.
    */

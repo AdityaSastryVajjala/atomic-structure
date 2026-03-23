@@ -32,7 +32,6 @@ export const SHELL_COLORS: readonly string[] = [
  * Formulas (research.md R-004):
  *   radius          = 1.2 + (i - 1) * 1.5            [Three.js units]
  *   angularVelocity = 0.6 / i                         [radians/second, outer = slower]
- *   ringTilt        = π/3 + (i * π/20)                [radians]
  *   color           = SHELL_COLORS[(i - 1) % 7]
  *
  * @param element The element whose shells array drives the output length and electronCount.
@@ -45,7 +44,6 @@ export function computeShellGeometry(element: Element): ShellGeometryParams[] {
       electronCount,
       radius: 1.2 + (i - 1) * 1.5,
       angularVelocity: 0.6 / i,
-      ringTilt: Math.PI / 3 + (i * Math.PI / 20),
       color: SHELL_COLORS[(i - 1) % SHELL_COLORS.length],
     };
   });

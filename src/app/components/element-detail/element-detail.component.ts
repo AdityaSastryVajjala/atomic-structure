@@ -21,13 +21,6 @@ import { getConfigurationString } from '../../models/element.model';
   template: `
     @if (selectedElement(); as el) {
       <div class="detail-panel">
-        <div class="hero">
-          <span class="hero-symbol">{{ el.symbol }}</span>
-          <div class="hero-info">
-            <span class="hero-name">{{ el.name }}</span>
-            <span class="hero-number">{{ el.atomicNumber }}</span>
-          </div>
-        </div>
         <dl class="data-list">
           <div class="data-row">
             <dt>Atomic Number</dt>
@@ -71,44 +64,11 @@ import { getConfigurationString } from '../../models/element.model';
       padding: 24px 0;
     }
 
-    .hero {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 14px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid #30363d;
-    }
-
-    .hero-symbol {
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: #58a6ff;
-      min-width: 2ch;
-      line-height: 1;
-    }
-
-    .hero-info {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .hero-name {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #e6edf3;
-    }
-
-    .hero-number {
-      font-size: 0.8rem;
-      color: #8b949e;
-    }
-
     .data-list {
       display: flex;
       flex-direction: column;
       gap: 6px;
+      padding: 12px 16px;
     }
 
     .data-row {

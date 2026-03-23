@@ -52,9 +52,8 @@ import { Element } from '../../../models/element.model';
     }
 
     .cell.selected {
-      background: #1f4068;
-      border-color: #58a6ff;
-      box-shadow: 0 0 0 1px #58a6ff;
+      background: #1c2840;
+      border: 2px solid #58a6ff;
     }
 
     .atomic-number {

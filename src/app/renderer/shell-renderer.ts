@@ -48,7 +48,7 @@ export class ShellRenderer {
         opacity: SHELL_OPACITY,
       });
       const mesh = new THREE.Mesh(geometry, material);
-      mesh.rotation.x = shell.ringTilt;
+      mesh.rotation.x = Math.PI / 2;
       scene.add(mesh);
       this.meshes.push(mesh);
     }

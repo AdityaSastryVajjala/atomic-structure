@@ -1,8 +1,9 @@
 ﻿# atomic-structure Development Guidelines
 
-Auto-generated from all feature plans. Last updated: 2026-03-22
+Auto-generated from all feature plans. Last updated: 2026-03-23
 
 ## Active Technologies
+- TypeScript 5.x (via Angular 19) + Angular 19 (standalone components), Three.js 0.170+, RxJS 7.x (003-ui-bohr-fix)
 
 - TypeScript 5.x (via Angular 19, standalone component architecture) + Angular 19, Three.js (latest stable, 0.170+), RxJS 7.x (bundled) (002-atomic-structure-viewer)
 
@@ -37,6 +38,7 @@ ng build --configuration production  # Static build → dist/
 - Strategy pattern for dual rendering modes (BohrStrategy / QuantumStrategy)
 
 ## Recent Changes
+- 003-ui-bohr-fix: Added TypeScript 5.x (via Angular 19) + Angular 19 (standalone components), Three.js 0.170+, RxJS 7.x
 
 - 002-atomic-structure-viewer: Added TypeScript 5.x (via Angular 19, standalone component architecture) + Angular 19, Three.js (latest stable, 0.170+), RxJS 7.x (bundled)
 

@@ -63,13 +63,13 @@ import { BohrStrategy } from './strategies/bohr-strategy';
 import { QuantumStrategy } from './strategies/quantum-strategy';
 
 // Camera defaults (contracts/atom-renderer-service.md — Camera Defaults table)
-const CAM_FOV      = 45;
+const CAM_FOV      = 65;
 const CAM_NEAR     = 0.1;
 const CAM_FAR      = 100;
-const CAM_POSITION = new THREE.Vector3(0, 2, 14);
+const CAM_POSITION = new THREE.Vector3(0, 8, 16);
 const CAM_TARGET   = new THREE.Vector3(0, 0, 0);
 const MIN_DISTANCE = 3;
-const MAX_DISTANCE = 25;
+const MAX_DISTANCE = 35;
 
 @Injectable({ providedIn: 'root' })
 export class AtomRendererService implements OnDestroy {
